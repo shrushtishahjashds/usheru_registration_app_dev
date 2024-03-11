@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class RegisrationService {
   checkUsernameExists(value: any): Observable<any> {
     console.log('this.checkUsernameExists');
     // Implement your logic here or return a default observable
@@ -27,5 +27,8 @@ export class ApiService {
     return this.http.get<boolean>(`${this.apiUrl}/username-available/${username}`);
   }
  
-  
+  registerUser(postData: any): Observable<any> {
+
+    return this.http.post(`${this.apiUrl}/register`, postData);
+  }
 }
