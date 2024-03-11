@@ -13,11 +13,11 @@
   ],
   "username-available": [
     {
-      "id": "ABC",
+      "id": "abc",
       "username": "abc"
     },
     {
-      "id": 2,
+      "id": "xyz",
       "username": "xyz"
     }
   ]
