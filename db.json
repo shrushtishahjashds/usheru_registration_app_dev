@@ -13,12 +13,12 @@
   ],
   "username-available": [
     {
-      "id":1,
-    "username": "abc"
-  },
+      "id": 1,
+      "username": "abc"
+    },
     {
-      "id":2,
-      "username""xyz"
+      "id": 2,
+      "username": "xyz"
     }
   ]
 }
