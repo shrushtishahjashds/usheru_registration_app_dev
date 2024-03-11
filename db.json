@@ -11,7 +11,14 @@
       "country": "Australia"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "username-available": [
+    {
+      "id":1,
+    "username": "abc"
+  },
+    {
+      "id":2,
+      "username""xyz"
+    }
+  ]
 }
