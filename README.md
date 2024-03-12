@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Running the Application Locally
 
 1. Clone the repository:
-   git clone <repository-url>
+   git clone repo-url
 2. npm install
 3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
@@ -36,13 +36,10 @@ The registration form consists of the following fields:
 Username: A unique alphanumeric identifier for the user.
 Country: A dropdown list to select the user's country.
 Username Availability Check
-When entering a username, the application checks its availability by making a request to the username-available API endpoint.
+When entering a username, the application checks its availability by requesting the username-available API endpoint.
 
 User Registration
 Upon successful completion of the form, the application sends a POST request to the register API endpoint to register the user.
-
-Loading Spinner
-A loading spinner is displayed while checking username availability to provide feedback to the user.
 
 Folder Structure
 src/app/registration: Contains the registration component and service.
