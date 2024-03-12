@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -20,12 +21,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   imports: [MatIconModule,
     MatToolbarModule, MatFormFieldModule,
     MatInputModule, MatSelectModule, CommonModule,
-    FormsModule, ReactiveFormsModule, MatCardModule, MatButtonModule, MatProgressSpinnerModule],
+    FormsModule, ReactiveFormsModule, MatCardModule, MatButtonModule, MatProgressSpinnerModule,NgbAlertModule],
 })
 export class RegistrationComponent implements OnInit {
   countries: any;
   checkingUsername = false;
-
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
   constructor(private regisrationService: RegisrationService) { }
 
   registrationForm = new FormGroup({
@@ -89,13 +92,20 @@ export class RegistrationComponent implements OnInit {
       this.regisrationService.registerUser(postData).pipe(
         switchMap((response) => {
           console.log('Registration successful. API response:', response);
+          this.isSuccessful = true;
+          this.isSignUpFailed = false;
           // Handle successful registration response if needed
           // Return an observable if there's another asynchronous operation to perform
           return of(response);
         }),
         tap(
+          
           () => console.log('Registration successful. Side effect.'),
-          (error) => console.error('Error during registration. API error:', error)
+          (error) => { this.errorMessage = error.message;
+            this.isSignUpFailed = true;
+            console.error('Error during registration. API error:', error)}
+          
+          
         )
       )
         .subscribe();

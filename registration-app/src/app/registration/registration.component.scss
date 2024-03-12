@@ -39,6 +39,7 @@ form {
   justify-content: space-around;
   margin-bottom: 20px;
   margin-top: 20px;
+  
 }
 .mat-mdc-form-field{
   margin: 20px;
@@ -48,4 +49,115 @@ form {
 .mat-mdc-form-field-hint  {
   color:lightslategrey;
   font-size: 0.8em;
+}
+.card-container.card {
+  max-width: 400px !important;
+  padding: 30px 25px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.bg-custom{
+  background-color: #333333;
+}
+.icon-usher{
+  width: 200px;
+    max-width: 80%;
+    filter: brightness(100%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+    vertical-align: middle;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+}
+.mat-mdc-raised-button:not(:disabled) {
+background-color: #000000;
+}
+.card-title{
+  font-weight: 500;
+  font-size: large;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+  margin: 15px;
+}
+.mat-mdc-form-field-error{
+  background-color: antiquewhite;
+  margin-left:-15px;
+  margin-right: -15px;
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+.alert-success{
+  margin: 15px;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Disable scrolling */
+  background-image: url('../../assets/images/bg.png') fixed;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif; /* Adjust the font family as needed */
+}
+
+.col-md-12 {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Disable scrolling */
+
+}
+
+.card-container {
+  background-color: rgba(255, 255, 255, 1); /* Adjust the background color and opacity as needed */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+ 
+}
+
+.animated-bg {
+  background-image: url('../../assets/images/bg.png');
+  background-size: cover;
+  background-position: center;
+  animation: slideBackground 10s linear infinite;
+}
+@keyframes slideBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

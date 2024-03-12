@@ -1,34 +1,50 @@
-<div>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row></mat-toolbar-row>
-  </mat-toolbar>
-  <div class="login-container">
-    <div class="login-content">
-      <mat-toolbar class="login-toolbar" color="primary">REGISTER</mat-toolbar>
-      <mat-card>
-        <form [formGroup]="registrationForm" #formDirective="ngForm" (ngSubmit)="onSubmit(registrationForm, formDirective)">
-          <mat-form-field class="form-input">
-            <mat-icon matPrefix>person_outline</mat-icon>
-            <input matInput autofocus formControlName="username" #input maxlength="20" placeholder="Username *" (blur)="checkUsernameAvailabilityFunc(registrationForm.get('username')?.value)" />
-            <mat-hint>
-              Choose a username with letters or numbers, no spaces, and a maximum length of 20 characters. Username should be lowercase.
-            </mat-hint>
-            <mat-error *ngIf="registrationForm.get('username')?.hasError('required')">Field is required</mat-error>
-            <mat-error *ngIf="registrationForm.get('username')?.hasError('pattern')">Username can only contain lowercase letters and numbers.</mat-error>
-            <mat-error *ngIf="registrationForm.get('username')?.hasError('isUsernameAvailable')">This username is already taken.</mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-icon matPrefix>outlined_flag</mat-icon>
-            <mat-label>Select Country</mat-label>
-            <mat-select formControlName="country" placeholder="Country">
-              <mat-option *ngFor="let countries of countries" [value]="countries.country">{{countries.country}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <div class="submit-btn">
-            <button mat-raised-button style="width:50%" type="submit" color="primary" [disabled]="!registrationForm.valid">Submit</button>
-          </div>
-        </form>
-      </mat-card>
+<nav class="navbar navbar-expand navbar-dark bg-custom">
+  <img id="profile-img" src="https://media.usheru.com/wp-content/uploads/2022/03/21140522/usheru-main-no-tag.png"
+    width="300" height="30" class="icon-usher" />
+</nav>
+
+<div class="col-md-12 animated-bg">
+
+  <div class="card card-container">
+    <span class="card-title">New User Registration</span>
+    <img id="profile-img"
+      src="	https://2288092.fs1.hubspotusercontent-na1.net/hubfs/2288092/usheru-email-signature-1.png"
+      class="profile-img-card" />
+
+    <form [formGroup]="registrationForm" #formDirective="ngForm" (ngSubmit)="onSubmit(registrationForm, formDirective)">
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>person_outline</mat-icon>
+        <input matInput autofocus formControlName="username" #input maxlength="20"
+          title="Username criteria: Letters/numbers, no spaces, max 20 characters, lowercase." placeholder="Username *"
+          (blur)="checkUsernameAvailabilityFunc(registrationForm.get('username')?.value)" />
+       
+        <mat-error *ngIf="registrationForm.get('username')?.hasError('required')">Field is required</mat-error>
+        <mat-error *ngIf="registrationForm.get('username')?.hasError('pattern')">Username can only contain lowercase
+          letters and numbers.</mat-error>
+        <mat-error *ngIf="registrationForm.get('username')?.hasError('isUsernameAvailable')">This username is already
+          taken.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>outlined_flag</mat-icon>
+        <mat-label>Select Country</mat-label>
+        <mat-select formControlName="country" placeholder="Country">
+          <mat-option *ngFor="let countries of countries" [value]="countries.country">{{countries.country}}</mat-option>
+        </mat-select>
+        
+        <mat-error *ngIf="registrationForm.get('country')?.hasError('required')">Field is required</mat-error>
+      </mat-form-field>
+      <div class="submit-btn">
+        <button mat-raised-button style="width:100%;margin-left: 15px;;margin-right:15px" type="submit" color="primary"
+          [disabled]="!registrationForm.valid">
+          <strong>Submit</strong></button>
+      </div>
+      <div class="alert alert-danger" *ngIf="formDirective.submitted && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+    </form>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      User registered successfully!
     </div>
   </div>
 </div>
