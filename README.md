@@ -3,7 +3,6 @@
 This Angular application provides a simple user registration form with username validation and country selection. The form is powered by Angular Reactive Forms and communicates with a mock API to check username availability and register new users.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
-## Development server
 ## Running the Application Locally
 
 1. Clone the repository:
@@ -28,8 +27,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - **User Registration API**: Mock API used to register new users.
   - Endpoint: `https://my-json-server.typicode.com/shrushtishahjashds/usheru_registration_app_dev/register`
-
-## Build
 
 ## Application Overview
 
