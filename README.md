@@ -35,7 +35,10 @@ The registration form consists of the following fields:
 
 Username: A unique alphanumeric identifier for the user.
 Country: A dropdown list to select the user's country.
-Username Availability Check
+- **User Availability Check**
+- When testing the "Username Availability Check," you can use the following usernames:
+  - Existing Username: test_user
+  - Existing Username: abc
 When entering a username, the application checks its availability by requesting the username-available API endpoint.
 
 User Registration
