@@ -90,5 +90,15 @@
       "id": "xyz",
       "username": "xyz"
     }
+  ],
+  "register": [
+    {
+      "id": "abc",
+      "username": "abc"
+    },
+    {
+      "id": "xyz",
+      "username": "xyz"
+    }
   ]
 }
