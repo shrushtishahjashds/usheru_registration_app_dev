@@ -39,7 +39,7 @@ Country: A dropdown list to select the user's country.
 - When testing the "Username Availability Check," you can use the following usernames:
   - Existing Username: test_user
   - Existing Username: abc
-When entering a username, the application checks its availability by requesting the username-available API endpoint.
+- When entering a username, the application checks its availability by requesting the username-available API endpoint.
 
 User Registration
 Upon successful completion of the form, the application sends a POST request to the register API endpoint to register the user.
