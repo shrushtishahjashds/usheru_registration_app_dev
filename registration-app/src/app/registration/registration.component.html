@@ -14,7 +14,8 @@
     <form [formGroup]="registrationForm" #formDirective="ngForm" (ngSubmit)="onSubmit(registrationForm, formDirective)">
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>person_outline</mat-icon>
-        <input matInput autofocus formControlName="username" #input maxlength="20"
+        <mat-label>Enter Username</mat-label>
+        <input matInput autofocus formControlName="username" #input maxlength="20" required 
           title="Username criteria: Letters/numbers, no spaces, max 20 characters, lowercase." placeholder="Username *"
           (blur)="checkUsernameAvailabilityFunc(registrationForm.get('username')?.value)" />
        
@@ -28,7 +29,7 @@
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>outlined_flag</mat-icon>
         <mat-label>Select Country</mat-label>
-        <mat-select formControlName="country" placeholder="Country">
+        <mat-select formControlName="country" placeholder="Country" >
           <mat-option *ngFor="let countries of countries" [value]="countries.country">{{countries.country}}</mat-option>
         </mat-select>
         
@@ -43,7 +44,7 @@
         Signup failed!<br />{{ errorMessage }}
       </div>
     </form>
-    <div class="alert alert-success" *ngIf="isSuccessful">
+    <div class="alert alert-success" *ngIf="isSuccessful ">
       User registered successfully!
     </div>
   </div>
